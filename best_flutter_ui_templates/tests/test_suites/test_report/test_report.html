@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Calibri;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #2A323C;
+      color: white;
+      padding: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .total-box {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .pass-box {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .fail-box {
+      background-color: #D32F2F;
+      color: white;
+    }
+
+    .execution-time-box {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .content {
+      margin-top: 20px;
+    }
+
+    .suite-header {
+      background-color: #E0E0E0;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+
+    .stack-line {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: -15px;
+      margin-bottom: 15px;
+      color: #FF5722;
+    }
+
+    .ztm-line {
+      color: #4CAF50;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      border-top: 1px solid #E0E0E0;
+      padding-top: 10px;
+    }
+
+    .screenshot {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .screenshot-button {
+    background: linear-gradient(to bottom, #E0E0E0, rgb(172, 171, 171));
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 3px 6px; 
+    border-radius: 25px; 
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .screenshot-button:hover {
+    background: linear-gradient(to bottom, rgb(172, 171, 171), #E0E0E0); /* Hover gradient background */
+  }
+
+  </style>
+
+  <script>
+    function toggleScreenshot(elementId, buttonId) {
+      var screenshot = document.getElementById(elementId);
+      var button = document.getElementById(buttonId);
+
+      if (screenshot.style.display === "none") {
+        screenshot.style.display = "block";
+        button.innerHTML = "Hide Screenshot";
+      } else {
+        screenshot.style.display = "none";
+        button.innerHTML = "Show Screenshot";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">HTML Test Report - Flutter</div>
+    <div class="summary">
+      <div class="highlight-box total-box">Total Suites: 4 | Total Tests: 4</div>
+      <div class="highlight-box pass-box">Pass: 4</div>
+      <div class="highlight-box fail-box">Fail: 0</div>
+      <div class="highlight-box execution-time-box">Execution Time: 0 minutes 32 seconds</div>
+    </div>
+    
+    
+    <p class="suite-header">      verify_diary_meals_test test suite results      </p>
+    
+      
+    
+    <p class="suite-header">      verify_diary_training_test test suite results      </p>
+    
+      
+    
+    <p class="suite-header">      verify_hotel_filter_test test suite results      </p>
+    
+      
+    
+    <p class="suite-header">      verify_hotel_information_test test suite results      </p>
+    
+      
+  </div>
+  </div>
+</body>
+
+</html>
