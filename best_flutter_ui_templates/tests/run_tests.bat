@@ -1,4 +1,6 @@
 @echo off
+pip install re
+pip install os
 pip install jinja2
 setlocal enabledelayedexpansion
 
