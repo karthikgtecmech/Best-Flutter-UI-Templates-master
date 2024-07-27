@@ -26,6 +26,13 @@ time_pattern = r'\b\d{2}:\d{2}\b'
 exclude_pattern = '|'.join(
     map(re.escape, ["FlutterDriverExtension", "flutter:", "asynchronous gap", "LateInitializationError:", "Unhandled Exception:"]))
 
+# Mapping test suites to screenshot names
+test_suite_screenshot_mapping = {
+    "verify_diary_meals_test": "Diary_Meals_Test",
+    "verify_diary_training_test": "Diary_Training_Test",
+    # Add more mappings as needed
+}
+
 # Process log files
 for log_file_path in [os.path.join(log_directory, filename) for filename in os.listdir(log_directory) if filename.endswith('.log')]:
     log_name = os.path.splitext(os.path.basename(log_file_path))[0]
@@ -97,9 +104,10 @@ for log_file_path in [os.path.join(log_directory, filename) for filename in os.l
 
             # Fetching screenshots
             if "[E]" in line:
-                match = re.search(r'ZTM-\d+', line)
-                if match:
-                    screenshot_name = match.group()
+                # Determine the test suite name from the log name
+                test_suite_name = log_name
+                if test_suite_name in test_suite_screenshot_mapping:
+                    screenshot_name = test_suite_screenshot_mapping[test_suite_name]
                 else:
                     screenshot_name = None
             elif screenshot_name:
